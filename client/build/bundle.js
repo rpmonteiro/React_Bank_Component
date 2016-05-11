@@ -96,7 +96,7 @@
 	  },
 	  findAccountByOwnerName:function(ownerName){
 	    var foundAccount = null;
-	    for (account of this.accounts) {
+	    for (var account of this.accounts) {
 	      if(account.owner === ownerName){
 	        foundAccount = account;
 	      }
@@ -106,7 +106,7 @@
 	  filteredAccounts: function(type){
 	    if(!type) return this.accounts
 	    var filteredAccounts = [];
-	    for (account of this.accounts) {
+	    for (var account of this.accounts) {
 	      if(type === account.type)
 	        filteredAccounts.push(account);
 	    }
@@ -114,7 +114,7 @@
 	  },
 	  totalCash:function(type){
 	    var total = 0;
-	    for (account of this.filteredAccounts(type)) {
+	    for (var account of this.filteredAccounts(type)) {
 	      total += account.amount;
 	    }
 	    return total;
